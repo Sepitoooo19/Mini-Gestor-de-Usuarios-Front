@@ -89,7 +89,7 @@ La aplicación se iniciará en `http://localhost:3000`
 - **Nuxt 3** - Framework Vue.js con SSR/SSG
 - **TypeScript** - Tipado estático para JavaScript
 - **Vue 3** - Framework frontend reactivo
-- **Axios** - Cliente HTTP para consumir APIs
+- **$fetch** - Cliente HTTP nativo de Nuxt para consumir APIs
 - **CSS Scoped** - Estilos encapsulados por componente
 
 ## Configuración
