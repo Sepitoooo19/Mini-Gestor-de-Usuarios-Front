@@ -61,10 +61,9 @@ La aplicación se iniciará en `http://localhost:3000`
 ## Estructura del proyecto
 
 ```
-├── components/      # Componentes Vue reutilizables
+├── components/      # Componentes Vue reutilizables (vacío)
 ├── layouts/         # Layouts de la aplicación
-│   ├── default.vue        # Layout principal con navegación
-│   └── default-clean.vue  # Layout limpio sin navegación
+│   └── default.vue        # Layout principal con navegación
 ├── pages/           # Páginas de la aplicación (rutas automáticas)
 │   ├── index.vue          # Página de inicio
 │   ├── users.vue          # Lista de usuarios
@@ -77,8 +76,8 @@ La aplicación se iniciará en `http://localhost:3000`
 │   └── user.ts            # Tipos de usuario
 ├── utils/           # Utilidades y helpers
 │   └── dateFormatter.ts   # Formateo de fechas
-├── plugins/         # Plugins de Nuxt
-├── public/          # Archivos estáticos
+├── plugins/         # Plugins de Nuxt (vacío)
+├── public/          # Archivos estáticos (vacío)
 ├── nuxt.config.ts   # Configuración de Nuxt
 ├── package.json     # Dependencias del proyecto
 └── tsconfig.json    # Configuración TypeScript

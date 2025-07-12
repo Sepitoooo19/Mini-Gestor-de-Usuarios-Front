@@ -52,23 +52,23 @@
         <div class="tech-grid">
           <div class="tech-item">
             <span class="tech-name">Nuxt 3</span>
-            <span class="tech-desc">Frontend Framework</span>
+            
           </div>
           <div class="tech-item">
             <span class="tech-name">Vue 3</span>
-            <span class="tech-desc">JavaScript Framework</span>
+            
           </div>
           <div class="tech-item">
             <span class="tech-name">TypeScript</span>
-            <span class="tech-desc">Type Safety</span>
+            
           </div>
           <div class="tech-item">
             <span class="tech-name">Go</span>
-            <span class="tech-desc">Backend API</span>
+            
           </div>
           <div class="tech-item">
             <span class="tech-name">MongoDB</span>
-            <span class="tech-desc">Database</span>
+            
           </div>
         </div>
       </div>
