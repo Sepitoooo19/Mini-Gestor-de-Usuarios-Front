@@ -1,5 +1,6 @@
 <template>
   <div class="home-page">
+    <!-- Sección Hero -->
     <div class="hero-section">
       <div class="hero-content">
         <h1>👥 Bienvenido a UserManager</h1>
@@ -10,6 +11,7 @@
           Administra usuarios de manera eficiente con nuestra plataforma moderna
         </p>
         
+        <!-- Botones de acción principales -->
         <div class="hero-actions">
           <NuxtLink to="/users" class="btn btn-primary">
             👥 Ver Usuarios
@@ -21,9 +23,11 @@
       </div>
     </div>
 
+    <!-- Sección de características -->
     <div class="features-section">
       <div class="features-container">
         <h2>Características Principales</h2>
+        <!-- Grid de características -->
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">👁️</div>
@@ -46,9 +50,11 @@
       </div>
     </div>
 
+    <!-- Sección de tecnologías -->
     <div class="tech-section">
       <div class="tech-container">
         <h2>Tecnologías Utilizadas</h2>
+        <!-- Grid de tecnologías -->
         <div class="tech-grid">
           <div class="tech-item">
             <span class="tech-name">Nuxt 3</span>
@@ -77,7 +83,7 @@
 </template>
 
 <script setup lang="ts">
-// No necesitamos lógica adicional para esta página de inicio
+
 </script>
 
 <style scoped>
@@ -85,7 +91,6 @@
   min-height: calc(100vh - 140px);
 }
 
-/* Hero Section */
 .hero-section {
   background: linear-gradient(135deg, #8384DF 0%, #6c6fdd 100%);
   color: white;
@@ -160,7 +165,6 @@
   transform: translateY(-2px);
 }
 
-/* Features Section */
 .features-section {
   padding: 4rem 2rem;
   background-color: white;
@@ -216,7 +220,6 @@
   line-height: 1.6;
 }
 
-/* Tech Section */
 .tech-section {
   padding: 4rem 2rem;
   background-color: #f8f9fa;
