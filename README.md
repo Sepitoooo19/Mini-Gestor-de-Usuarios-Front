@@ -5,7 +5,7 @@ Aplicación web frontend para la gestión de usuarios desarrollada con Nuxt 3 y 
 ## Requisitos previos
 
 - Node.js 18.0 o superior
-- npm o yarn
+- npm
 - API Backend ejecutándose en localhost:8080
 - Puerto 3000 disponible
 - IDE recomendado: VS Code
@@ -115,13 +115,3 @@ runtimeConfig: {
   }
 }
 ```
-
-## Funcionalidades
-
-- ✅ **Lista de usuarios** - Visualización de todos los usuarios registrados
-- ✅ **Crear usuario** - Formulario con validaciones para registrar nuevos usuarios
-- ✅ **Detalles de usuario** - Vista individual con información completa
-- ✅ **Navegación responsive** - Interfaz adaptada para diferentes dispositivos
-- ✅ **Manejo de errores** - Gestión de errores de conexión y validación
-- ✅ **Formateo de fechas** - Visualización amigable de fechas
-- ✅ **TypeScript** - Tipado fuerte para mayor robustez del código
