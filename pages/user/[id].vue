@@ -85,16 +85,15 @@ const user = ref<User | null>(null);
 const loading = ref(true);
 const error = ref<string | null>(null);
 
-// Función para cargar los detalles del usuario
+/**
+ * Carga los detalles de un usuario específico por su ID
+ */
 const loadUserDetails = async () => {
   try {
     loading.value = true;
     error.value = null;
-    console.log('Cargando detalles del usuario con ID:', userId.value);
     user.value = await getUserById(userId.value);
-    console.log('Usuario cargado:', user.value);
   } catch (err: any) {
-    console.error('Error loading user details:', err);
     if (err.message.includes('fetch')) {
       error.value = 'No se puede conectar con el servidor. Verifica que el backend esté ejecutándose en http://localhost:8080';
     } else if (err.message.includes('Usuario no encontrado')) {
@@ -107,7 +106,9 @@ const loadUserDetails = async () => {
   }
 };
 
-// Función para reintentar la carga
+/**
+ * Reintenta cargar los detalles del usuario en caso de error
+ */
 const retryLoad = () => {
   loadUserDetails();
 };
@@ -248,19 +249,5 @@ onMounted(() => {
 .secondary-button:hover {
   background-color: #8384DF;
   color: white;
-}
-
-@media (max-width: 768px) {
-  .user-detail-page {
-    padding: 1rem;
-  }
-  
-  .user-details-card {
-    padding: 1.5rem;
-  }
-  
-  .header-section h1 {
-    font-size: 2rem;
-  }
 }
 </style>

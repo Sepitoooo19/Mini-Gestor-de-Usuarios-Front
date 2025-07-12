@@ -68,16 +68,15 @@ const users = ref<User[]>([]);
 const loading = ref(true);
 const error = ref<string | null>(null);
 
-// Función para cargar usuarios
+/**
+ * Carga la lista de usuarios desde el backend
+ */
 const loadUsers = async () => {
   try {
     loading.value = true;
     error.value = null;
-    console.log('Intentando cargar usuarios...');
     users.value = await getAllUsers();
-    console.log('Usuarios cargados:', users.value);
   } catch (err: any) {
-    console.error('Error loading users:', err);
     if (err.message.includes('fetch')) {
       error.value = 'No se puede conectar con el servidor. Verifica que el backend esté ejecutándose en http://localhost:8080';
     } else {
@@ -88,7 +87,9 @@ const loadUsers = async () => {
   }
 };
 
-// Función para reintentar la carga
+/**
+ * Reintenta cargar los usuarios en caso de error
+ */
 const retryLoad = () => {
   loadUsers();
 };
@@ -246,54 +247,5 @@ h1 {
   background-color: #cccccc;
   cursor: not-allowed;
   opacity: 0.6;
-}
-
-@media (max-width: 768px) {
-  .users-page {
-    padding: 1rem;
-  }
-  
-  .header-section {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  .add-user-button {
-    justify-content: center;
-  }
-  
-  .users-table {
-    font-size: 0.875rem;
-  }
-  
-  .users-table th,
-  .users-table td {
-    padding: 8px 10px;
-  }
-  
-  .details-button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .users-table {
-    font-size: 0.75rem;
-  }
-  
-  .details-button {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.7rem;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-  }
 }
 </style>

@@ -2,6 +2,11 @@
 
 
 
+/**
+ * Formatea una fecha a formato DD/MM/YYYY
+ * @param dateString - Fecha en string, Date o null/undefined
+ * @returns Fecha formateada o 'N/A' si no hay fecha
+ */
 export const formatDate = (dateString: string | Date | null | undefined): string => {
   if (!dateString) {
     return 'N/A';
@@ -27,6 +32,11 @@ export const formatDate = (dateString: string | Date | null | undefined): string
   return `${day}/${month}/${year}`;
 };
 
+/**
+ * Formatea una fecha a formato DD/MM/YYYY HH:MM
+ * @param dateString - Fecha en string, Date o null/undefined
+ * @returns Fecha con hora formateada o 'N/A' si no hay fecha
+ */
 export const formatDateTime = (dateString: string | Date | null | undefined): string => {
   if (!dateString) {
     return 'N/A';

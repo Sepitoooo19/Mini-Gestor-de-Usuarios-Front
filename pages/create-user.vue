@@ -110,19 +110,28 @@ const isFormValid = computed(() => {
          isValidEmail(form.value.email);
 });
 
-// Función para validar email
+/**
+ * Valida el formato de email usando regex
+ * @param email - Email a validar
+ * @returns true si el email es válido
+ */
 const isValidEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
 
-// Función para limpiar errores
+/**
+ * Limpia todos los errores del formulario
+ */
 const clearErrors = () => {
   errors.value = {};
   generalError.value = '';
 };
 
-// Función para validar campos individuales
+/**
+ * Valida todos los campos del formulario
+ * @returns true si el formulario es válido
+ */
 const validateForm = (): boolean => {
   clearErrors();
   let isValid = true;
@@ -170,7 +179,11 @@ const validateForm = (): boolean => {
   return isValid;
 };
 
-// Función para formatear la fecha correctamente (evitar problemas de zona horaria)
+/**
+ * Formatea fecha para envío al backend evitando problemas de zona horaria
+ * @param dateString - Fecha en formato string
+ * @returns Fecha formateada en YYYY-MM-DD
+ */
 const formatDateForBackend = (dateString: string): string => {
   if (!dateString) return '';
   
@@ -185,7 +198,9 @@ const formatDateForBackend = (dateString: string): string => {
   return `${year}-${month}-${day}`;
 };
 
-// Función para manejar el envío del formulario
+/**
+ * Maneja el envío del formulario de creación de usuario
+ */
 const handleSubmit = async () => {
   if (!validateForm()) {
     return;
@@ -201,11 +216,8 @@ const handleSubmit = async () => {
       birthdate: formatDateForBackend(form.value.birthdate)
     };
     
-    console.log('Enviando usuario:', userData);
-    
     const newUser = await createUser(userData);
     
-    console.log('Usuario creado exitosamente:', newUser);
     successMessage.value = '¡Usuario creado exitosamente!';
     
     // Limpiar formulario
@@ -217,14 +229,15 @@ const handleSubmit = async () => {
     }, 2000);
     
   } catch (error: any) {
-    console.error('Error creating user:', error);
     generalError.value = error.message || 'Error al crear el usuario. Inténtalo de nuevo.';
   } finally {
     isSubmitting.value = false;
   }
 };
 
-// Función para regresar a la lista de usuarios
+/**
+ * Navega de vuelta a la página de lista de usuarios
+ */
 const goBack = () => {
   window.location.href = '/users';
 };
@@ -385,29 +398,5 @@ const goBack = () => {
   background-color: #cccccc;
   cursor: not-allowed;
   opacity: 0.6;
-}
-
-@media (max-width: 768px) {
-  .create-user-page {
-    padding: 1rem;
-  }
-  
-  .form-container {
-    padding: 1.5rem;
-  }
-  
-  .header-section h1 {
-    font-size: 2rem;
-  }
-  
-  .form-actions {
-    flex-direction: column;
-  }
-  
-  .cancel-button,
-  .submit-button {
-    width: 100%;
-    justify-content: center;
-  }
 }
 </style>
